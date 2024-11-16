@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ModernCalc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div>
+            <input type="number" id="num1">
+            <input type="number" id="num2">
+        </div>
+        <div class="buttons">
+            <button onclick="calculate(1)">+</button>
+            <button onclick="calculate(2)">-</button>
+            <button onclick="calculate(3)">×</button>
+            <button onclick="calculate(4)">÷</button>
+        </div>
+        <div  class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            fetch(`/add/${num1}/${num2}/${operation}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML = 
+                        `Result: ${data.result}`;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
