@@ -1,0 +1,28 @@
+.chips {
+    margin: 20px 0;
+}
+
+.timeline {
+    min-height: 200px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.collection {
+    min-height: 100px;
+}
+
+nav .input-field {
+    height: 100%;
+}
+
+#search {
+    height: 100%;
+    margin: 0;
+    padding-left: 50px;
+}
+
+#search:focus {
+    background-color: #fff;
+}
