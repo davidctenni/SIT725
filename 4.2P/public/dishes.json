@@ -1,0 +1,52 @@
+{
+    "dishes": [
+      {
+        "name": "Mashed Potato",
+        "cookingTime": "30 mins",
+        "difficulty": "Medium",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Steak",
+        "cookingTime": "15 mins",
+        "difficulty": "Hard",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Steamed Broccoli",
+        "cookingTime": "10 mins",
+        "difficulty": "Easy",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Roasted Carrots",
+        "cookingTime": "25 mins",
+        "difficulty": "Easy",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Grilled Chicken",
+        "cookingTime": "20 mins",
+        "difficulty": "Medium",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Sautéed Mushrooms",
+        "cookingTime": "15 mins",
+        "difficulty": "Easy",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Baked Salmon",
+        "cookingTime": "25 mins",
+        "difficulty": "Medium",
+        "image": "https://placehold.co/400x300/png"
+      },
+      {
+        "name": "Garden Salad",
+        "cookingTime": "10 mins",
+        "difficulty": "Easy",
+        "image": "https://placehold.co/400x300/png"
+      }
+    ]
+  }
