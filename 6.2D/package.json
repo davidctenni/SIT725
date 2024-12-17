@@ -1,0 +1,22 @@
+{
+    "name": "sit725-3point2",
+    "version": "1.0.0",
+    "description": "SIT725 3.2P",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "dev": "nodemon server/server.js",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongodb": "^6.3.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15",
+        "jest": "^29.7.0",
+        "supertest": "^6.3.3"
+    }
+}

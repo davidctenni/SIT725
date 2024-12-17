@@ -1,0 +1,39 @@
+.chips {
+    margin: 20px 0;
+}
+
+.timeline {
+    min-height: 200px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.collection {
+    min-height: 100px;
+}
+
+nav.white {
+    box-shadow: none;
+    background-color: white !important;
+    margin-bottom: 20px;
+}
+
+nav.white .input-field input[type=search] {
+    border-bottom: 1px solid #9e9e9e;
+    height: 64px;
+}
+
+nav.white .input-field input[type=search]:focus {
+    background-color: white;
+    border-bottom: 1px solid #26a69a;
+    box-shadow: none;
+}
+
+nav.white .input-field input[type=search] + label i {
+    color: #9e9e9e;
+}
+
+nav.white .input-field input[type=search] + label.active i {
+    color: #26a69a;
+}
