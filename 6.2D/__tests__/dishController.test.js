@@ -31,4 +31,28 @@ describe('DishController', () => {
             count: mockDishes.length
         });
     });
+
+    test('getDishes handles errors properly', async () => {
+        dishService.getAllDishes.mockRejectedValue(new Error('Database error'));
+        
+        await dishController.getDishes(mockRequest, mockResponse);
+        
+        expect(mockResponse.status).toHaveBeenCalledWith(500);
+        expect(mockResponse.json).toHaveBeenCalledWith({
+            status: 'error',
+            message: 'Error fetching dishes'
+        });
+    });
+
+    test('getDishes handles empty dish list', async () => {
+        dishService.getAllDishes.mockResolvedValue([]);
+        
+        await dishController.getDishes(mockRequest, mockResponse);
+        
+        expect(mockResponse.json).toHaveBeenCalledWith({
+            status: 'success',
+            dishes: [],
+            count: 0
+        });
+    });
 });

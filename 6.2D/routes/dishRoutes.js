@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { dishController } = require('../controllers/index');
+const dishController = require('../controllers/dishController');
 
-router.get('/', (req, res) => {
-    dishController.getDishes(req, res);
-});
+router.get('/', dishController.getDishes);
+
+router.post('/', dishController.addDish);
 
 module.exports = router;

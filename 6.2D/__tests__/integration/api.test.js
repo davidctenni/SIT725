@@ -36,3 +36,54 @@ describe('Dish API Integration Tests', () => {
         expect(response.body.dishes.length).toBe(2);
     });
 });
+test('GET /api/dishes returns 500 on database error', async () => {
+    const mockCollection = {
+        find: jest.fn().mockImplementation(() => {
+            throw new Error('Database error');
+        })
+    };
+    getCollection.mockReturnValue(mockCollection);
+
+    const response = await request(app)
+        .get('/api/dishes')
+        .expect(500);
+
+    expect(response.body.status).toBe('error');
+});
+
+test('POST /api/dishes creates new dish', async () => {
+    const newDish = {
+        name: 'New Test Dish',
+        cookingTime: '25 mins',
+        difficulty: 'Easy',
+        image: 'http://example.com/image.jpg'
+    };
+
+    const mockCollection = {
+        insertOne: jest.fn().mockResolvedValue({
+            acknowledged: true,
+            insertedId: '123'
+        })
+    };
+    getCollection.mockReturnValue(mockCollection);
+
+    const response = await request(app)
+        .post('/api/dishes')
+        .send(newDish)
+        .expect(201);
+
+    expect(response.body.status).toBe('success');
+});
+
+test('POST /api/dishes validates required fields', async () => {
+    const invalidDish = {
+        cookingTime: '25 mins' // Missing required name
+    };
+
+    const response = await request(app)
+        .post('/api/dishes')
+        .send(invalidDish)
+        .expect(400);
+
+    expect(response.body.status).toBe('error');
+});
